@@ -10,5 +10,7 @@ do
 		echo $d >> $R
 			
 		M=$(echo "LPUSH done \"$R\"" | ./mimiredis.sh)
+	else
+		sleep 0.5
 	fi
 done

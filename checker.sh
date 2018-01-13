@@ -6,5 +6,7 @@ do
 	R=$(echo "RPOP done" | ./mimiredis.sh)
 	if [[ "$R" != "(nil)"  ]];then
 		echo "DONE $R"
+	else
+		sleep 0.5
 	fi
 done
