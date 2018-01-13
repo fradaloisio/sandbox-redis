@@ -7,6 +7,8 @@ do
 	if [[ "$R" != "(nil)"  ]];then
 		echo "Creating $R"
 		d=$(date --iso-8601=seconds | sed 's/:/-/')
-		echo $d >> $R 
+		echo $d >> $R
+			
+		M=$(echo "LPUSH done \"$R\"" | ./mimiredis.sh)
 	fi
 done
